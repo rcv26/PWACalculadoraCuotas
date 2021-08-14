@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Cuotas</title>
+    <!--materialize icons, css & js -->
+    <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link  href="https://fonts.gstatic.com/s/materialicons/v52/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2">
+    <link type="text/css" href="/css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="#FFE1C4">
+    
+
+</head>
+<body class="grey lighten-4">
+
+    <nav class="z-depth-0">
+        <div class="nav-wrapper container">
+         <a href="/">Calculadora<span>Cuotas</span></a>
+         <span class="right grey-text text-draken.1">
+             <i class="material-icons sidenav-triger" data-target="side-menu">menu</i>
+         </span>
+        </div>
+    </nav>
+
+    <ul id="side-menu" class="sidenav side-menu">
+        <li><a class="subheader">CalculadoraCuota</a></li>
+        <li><a href="/" class="waves-effect">Home</a></li>
+        <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="/pages/contact.html" class="waves-effect">
+        <i class="material-icons">mail_outline</i>Contact</a>
+         </li>
+    </ul>
+
+    <div class="recipes container grey-text text-darken-1">
+        <div class="card-panel recipe white row">
+          <img src="/img/logo.jpeg" alt="recipe thumb">
+          <div class="recipe-details">
+            <div class="recipe-title"><h3> <b>MEGATECH</b></h3></div>
+            <div class="recipe-title"><h4>Cotizaci&oacute;n</h4></div>
+          </div>
+        </div>
+
+    <section>
+    <div class="row">
+        <div class="col s12 m4 offset-m4">
+            <div class="card">
+                <div class="card-action teal lighten-1 white.text">
+                    <h3>Cuotas</h3>
+                </div>
+
+                <div class="card-content">
+                    <div class="input-field">
+                    <i class="material-icons prefix">attach_money</i>
+                        <input type="number" id="valor" name="valor" style="font-size: large;" maxlength="8" onKeyPress="return acceptNum(event)" class="validate">
+                        <label for="valor">Valor del Producto</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <!-- <i class=" large material-icons prefix">attach_money</i> -->
+                          <table>
+                              <tr>
+                                  <td></td>
+                                  <i class=" large material-icons prefix">attach_money</i><td><h4 id="DataLink"></h4></td>
+                                  <td></td>
+                              </tr>
+                          </table>
+                        </div>
+                     </div><br>
+
+                     <form action="" id="form">
+                            <button type="button" class="btn-small wave-effect wave-dark" style="width: 45%;" onclick="datamovil()" >DataMovil</button>
+                            <button type="button" class="btn-small wave-effect wave-dark" style="width: 45%;" onclick="datalink()" >DataLink</button>
+                            
+                        </form>
+
+                 </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <table class="centered" id="mytable">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><h4><b>Efectivo</b></h4></th>
+                <td><h4 id="efectivo"></h4></td>
+            </tr>
+            <tr>
+                <th><h4> <b> Corriente</b></h4></th>
+                <td><h4 id="valoringresar"></h4></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="highlight centered">
+        <tr>
+            <td><h4> <b> Diferido</b> </h4></td>
+        </tr>
+        <tr> 
+            <td><img src="/img/banner (1).png"></td>
+        </tr>
+        <tr>
+    </table>
+
+    <table class="highlight centered" id="tabla">
+        <thead>
+                <th data-field="id"><h4> <b> Meses plazo</b> </h4></th>
+                <th data-field="cuotas"><h4> <b>Cuotas</b> </h4></th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td><h4>3 meses</h4></td>
+                <td ><h4 id=0></h4></td>
+            </tr>
+            <tr>
+                <td><h4>6 meses</h4></td>
+                <td><h4 id=1></h4></td>
+            </tr>
+            <tr>
+                <td><h4>9 meses</h4></td>
+                <td><h4 id=2></h4></td>
+            </tr>
+            <tr>
+                <td><h4>12 meses</h4></td>
+                <td><h4 id=3></h4></td>
+            </tr>
+            <tr>
+                <td><h4>18 meses</h4></td>
+                <td><h4 id=4></h4></td>
+            </tr>
+            <tr>
+                <td><h4>24 meses</h4></td>
+                <td><h4 id=5></h4></td>
+            </tr> 
+        </tbody> 
+    </table><br>
+    
+        <button id="btnCapturar2" class="add-btn" style="width: 45%;" onclick="Descargar()">Descargar</button>
+    
+ 
+ <script src="/js/api.js"></script>
+ <script src="/js/ui.js"></script>
+</body>
+</html>
